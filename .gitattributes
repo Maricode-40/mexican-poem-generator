@@ -1,0 +1,19 @@
+# 1. Standardize all text files
+* text=auto
+
+# 2. JavaScript specific files (Ensures code stays clean across OS)
+*.js text eol=lf
+*.jsx text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.json text eol=lf
+
+# 3. Web & Poetry Assets (Keep Spanish accents safe)
+*.html text eol=lf
+*.css text eol=lf
+*.txt text eol=lf
+
+# 4. Large Data/Models (Treat as binary)
+*.csv binary
+*.bin binary
+*.weights binary

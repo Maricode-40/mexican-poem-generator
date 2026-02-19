@@ -1,0 +1,13 @@
+# Dependency folders (very heavy, don't upload!)
+node_modules/
+
+# Environment variables (Where you'll hide your AI API keys)
+.env
+
+# Debug logs
+npm-debug.log*
+yarn-error.log*
+
+# Operating system files
+.DS_Store
+Thumbs.db
