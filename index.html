@@ -12,6 +12,7 @@
     <link rel="shortcut icon" href="./assets/img/mexicanPoetry_RetroCosmos.png" type="image/x-icon" />
     <title>Mexican soul in every verse. Generate AI poetry in seconds</title>
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.13.2/dist/axios.min.js"></script>
     <script src="./js/app.js" defer></script>
   </head>
   <body>
@@ -21,10 +22,10 @@
       </header>
       <main>
         <form id="poem-generator-form">
-          <label for="topic" class="visually-hidden">Topic for the Mexican Poem</label>
+          <label for="user-instructions" class="visually-hidden">Topic for the Mexican Poem</label>
           <input
             type="text"
-            id="topic"
+            id="user-instructions"
             name="topic"
             placeholder="Enter the topic of the Mexican poem"
             autofocus
