@@ -1,6 +1,5 @@
 body {
-  background-image: url(../assets/img/mexicanPoetry_RetroCosmos.png);
-  background-size: contain;
+  background: linear-gradient(125deg, rgba(34, 139, 34, 0.45), rgba(255, 255, 255, 0.35));
   font-family: Helvetica, Arial, sans-serif;
 }
 
@@ -16,14 +15,25 @@ header {
 h1 {
   text-align: center;
   font-weight: 800;
-  font-size: 36px;
+  font-size: 30px;
   line-height: 1.5;
   color: white;
   letter-spacing: 1.5px;
-  background-color: #845fe186;
-  border-left: 3px solid #885df1;
+  background-image: url(../assets/img/mexicanPoetry_RetroCosmos.png);
+  background-size: contain;
+  background-position: center;
+  padding: 10%;
+  border-left: 5px solid #7644f2;
   box-shadow: 0px 20px 60px rgba(65, 50, 100, 0.03);
-  border-radius: 10px;
+  border-radius: 15px;
+  position: relative;
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease;
+}
+h1:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0px 30px 80px rgba(65, 50, 100, 0.12);
 }
 
 form {
@@ -69,13 +79,13 @@ form {
 footer {
   margin-top: 30px;
   text-align: center;
-  font-size: 13px;
-  background-color: #b6a0ed;
+  font-size: 14px;
+  background-color: #afd3ad;
   box-shadow: 0px 20px 60px rgba(65, 50, 100, 0.08);
   border-radius: 10px;
-  color: rgb(189, 55, 222);
+  color: rgba(44, 3, 55, 0.595);
 }
 
 a {
-  color: rgb(55, 35, 74);
+  color: rgb(31, 5, 54);
 }
