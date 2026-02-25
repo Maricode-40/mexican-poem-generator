@@ -11,28 +11,40 @@
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="shortcut icon" href="./assets/img/mexicanPoetry_RetroCosmos.png" type="image/x-icon" />
     <title>Mexican soul in every verse. Generate AI poetry in seconds</title>
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <script src="./js/app.js" defer></script>
   </head>
   <body>
     <div class="container">
       <header>
-        <h1>AI Mexican Project Generator</h1>
+        <h1>AI Mexican Poem Generator</h1>
       </header>
       <main>
-        <form>
-          <input type="text" placeholder="Enter the topic of the Mexican poem" autofocus required autocomplete="off" class="instructions" />
-          <input type="submit" class="submit-button" />
+        <form id="poem-generator-form">
+          <label for="topic" class="visually-hidden">Topic for the Mexican Poem</label>
+          <input
+            type="text"
+            id="topic"
+            name="topic"
+            placeholder="Enter the topic of the Mexican poem"
+            autofocus
+            required
+            autocomplete="off"
+            class="instructions"
+          />
+          <input type="submit" value="Submit" class="submit-button" />
         </form>
-        <div class="poem">
-          Una calaverita para el Día de Muertos,un romance de amor
-          <br />
-          o una décima que capture la esencia de México.
-        </div>
+        <div class="poem" id="poem"></div>
       </main>
       <footer>
         This project is coded by <a href="https://github.com/Maricode-40"> Marissa Rico </a> and
-        <a href="https://maricode-40.github.io/mexican-poem-generator/" target="_blank"> is open-sourced on GitHub </a>
-        and <a href="https://mexican-poem-generator.netlify.app/" target="_blank"> is hosted on Netlify.</a>
+        <a href="https://maricode-40.github.io/mexican-poem-generator/" target="_blank" rel="noopener noreferrer">
+          is open-sourced on GitHub
+        </a>
+        and
+        <a href="https://mexican-poem-generator.netlify.app/" target="_blank" rel="noopener noreferrer">
+          is hosted on Netlify.</a
+        >
       </footer>
     </div>
   </body>

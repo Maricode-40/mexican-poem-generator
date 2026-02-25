@@ -45,6 +45,11 @@ form {
   margin-bottom: 30px;
 }
 
+.visually-hidden {
+  position: absolute;
+  left: -9999px;
+}
+
 .instructions {
   padding: 16px;
   border: 1px solid rgba(39, 33, 66, 0.5);
