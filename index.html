@@ -17,9 +17,11 @@
   </head>
   <body>
     <div class="container">
-      <header>
+      <header class="hero-header">
+        <div class="hero-image"></div>
         <h1>AI Mexican Poem Generator</h1>
       </header>
+
       <main>
         <div class="form-container">
           <form id="poem-generator-form">
@@ -28,13 +30,13 @@
               type="text"
               id="user-instructions"
               name="topic"
-              placeholder="Enter the topic of the Mexican poem"
+              placeholder="Love, Día de Muertos, desert, mariachi…"
               autofocus
               required
               autocomplete="off"
               class="instructions"
             />
-            <input type="submit" value="Submit" class="submit-button" />
+            <input type="submit" value="Generate Poem" class="submit-button" />
           </form>
           <div class="hint">i.e:Flower, Paris o Chocolate</div>
         </div>
@@ -42,7 +44,7 @@
       </main>
       <footer>
         This project is coded by <a href="https://github.com/Maricode-40"> Marissa Rico </a> and
-        <a href="https://maricode-40.github.io/mexican-poem-generator/" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/Maricode-40/mexican-poem-generator" target="_blank" rel="noopener noreferrer">
           is open-sourced on GitHub
         </a>
         and

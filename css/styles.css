@@ -1,39 +1,68 @@
-body {
-  background: linear-gradient(125deg, rgba(34, 139, 34, 0.45), rgba(255, 255, 255, 0.35));
-  font-family: Helvetica, Arial, sans-serif;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-header {
-  margin-bottom: 30px;
+html,
+body {
+  overscroll-behavior: none;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: linear-gradient(125deg, rgba(34, 139, 34, 0.45), rgba(255, 255, 255, 0.35));
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 .container {
   margin: 120px auto;
   max-width: 600px;
+  padding: 0 20px;
 }
 
-h1 {
-  text-align: center;
-  font-weight: 800;
-  font-size: 30px;
-  line-height: 1.5;
-  color: white;
-  letter-spacing: 1.5px;
-  background-image: url(../assets/img/mexicanPoetry_RetroCosmos.png);
-  background-size: contain;
-  background-position: center;
-  padding: 10%;
-  border-left: 5px solid #7644f2;
-  box-shadow: 0px 20px 60px rgba(65, 50, 100, 0.03);
-  border-radius: 15px;
+.hero-header {
   position: relative;
-  transition:
-    transform 0.45s ease,
-    box-shadow 0.45s ease;
+  margin: 80px 0;
 }
-h1:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0px 30px 80px rgba(65, 50, 100, 0.12);
+
+.hero-image {
+  position: relative;
+  background-image: url("../assets/img/mexicanPoetry_RetroCosmos.png");
+  background-size: cover;
+  background-position: center;
+  aspect-ratio: 16 / 6;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0px 20px 60px rgba(65, 50, 100, 0.12);
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.hero-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 20px;
+}
+
+.hero-header h1 {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: clamp(22px, 2.2vw, 34px);
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  text-shadow: 0px 6px 20px rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  pointer-events: none;
 }
 
 .form-container {
@@ -41,43 +70,40 @@ h1:hover {
   box-shadow: 0px 20px 60px rgba(65, 50, 100, 0.08);
   border-radius: 10px;
   margin-bottom: 30px;
-  padding: 15px 20px;
+  padding: 20px;
 }
 
 form {
   display: flex;
-}
-
-.hint {
-  line-height: 1.5;
-  margin-top: 5px;
-  opacity: 0.6;
-  font-size: 12px;
-}
-
-.visually-hidden {
-  position: absolute;
-  left: -9999px;
+  align-items: center;
+  gap: 20px;
 }
 
 .instructions {
+  flex: 1 1 auto;
+  min-width: 0;
   padding: 16px;
   border: 1px solid rgba(39, 33, 66, 0.5);
-  width: 80%;
-  font-size: 16px;
   border-radius: 50px;
-  line-height: 20px;
+  font-size: 16px;
   color: black;
 }
 
 .submit-button {
-  margin-left: 20px;
+  flex: 0 0 auto;
   background: #885df1;
   color: white;
   border: none;
-  width: 150px;
   border-radius: 50px;
-  padding: 14px 24px;
+  padding: 14px 28px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.hint {
+  margin-top: 8px;
+  font-size: 12px;
+  opacity: 0.6;
 }
 
 .poem {
@@ -102,11 +128,55 @@ footer {
   background-color: #afd3ad;
   box-shadow: 0px 20px 60px rgba(65, 50, 100, 0.08);
   border-radius: 10px;
-  color: rgba(44, 3, 55, 0.595);
+  color: rgba(44, 3, 55, 0.6);
+  padding: 10px;
 }
 
 a {
   color: rgb(31, 5, 54);
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 40px auto;
+  }
+
+  .hero-header {
+    margin: 40px 0;
+  }
+
+  .hero-image {
+    aspect-ratio: 3 / 4;
+  }
+
+  form {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .instructions {
+    flex: 1 1 0%;
+    min-width: 0;
+    padding: 14px 16px;
+  }
+
+  .instructions::placeholder {
+    font-size: 12px;
+  }
+
+  .submit-button {
+    flex: 0 0 auto;
+    padding: 14px 18px;
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 769px) {
+  .hero-image:hover {
+    transform: translateY(-4px) scale(1.015);
+    box-shadow: 0px 30px 80px rgba(65, 50, 100, 0.2);
+  }
 }
 
 .generating {
@@ -119,8 +189,14 @@ a {
   }
 }
 
-@-webkit-keyframes blink-animation {
-  to {
-    visibility: hidden;
-  }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
