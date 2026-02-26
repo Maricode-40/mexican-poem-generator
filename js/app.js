@@ -7,8 +7,18 @@ function displayPoem(response) {
   });
 }
 
+const button = document.querySelector("#generate-button");
+button.value = "Generar poema";
+button.disabled = false;
+
 function generatePoem(event) {
   event.preventDefault();
+
+  const button = document.querySelector("#generate-button");
+  const originalText = button.value;
+
+  button.value = "✨ Creando versos...";
+  button.disabled = true;
 
   let instructionsInput = document.querySelector("#user-instructions");
   let apikey = "46f53o0114a0et1fb464bc0d734f573e";

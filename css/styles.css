@@ -200,3 +200,24 @@ a {
   white-space: nowrap;
   border: 0;
 }
+
+.submit-button:disabled {
+  opacity: 0.95;
+  cursor: not-allowed;
+  animation: glowPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 0px rgba(136, 93, 241, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 18px rgba(136, 93, 241, 0.6);
+    transform: scale(1.03);
+  }
+  100% {
+    box-shadow: 0 0 0px rgba(136, 93, 241, 0.4);
+    transform: scale(1);
+  }
+}
